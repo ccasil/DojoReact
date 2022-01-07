@@ -6,12 +6,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import Counter from './Counter';
 import List from './List';
+import Card from './Card';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div className='container mt-3'>
+    {/* <App />
     <Counter name="none" />
-    <List loggedIn="goose" />
+    <List loggedIn="goose" /> */}
+    <Card />
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
