@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import Counter from './Counter';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import App from './App';
+import Counter from './Counter';
+import List from './List';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <Counter name="none" />
+    <List loggedIn="goose" />
   </React.StrictMode>,
   document.getElementById('root')
 );
