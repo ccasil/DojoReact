@@ -4,30 +4,45 @@ class Card extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            timer: 100
+            minutes: 0,
+            seconds: 0
         }
     }
 
-    // componentDidMount(){
-	// }
+    componentDidMount(){
+        this.timerID = setInterval(() => {
+            this.startTime();
+            if(this.state.seconds === 60){
+                this.setState({
+                    seconds: 0,
+                    minutes: this.state.minutes + 1
+                });
+            }
+        }, 1000);
+	}
 
-    beginTimer() {
-        this.setState(prevState => ({
-            timer: prevState.timer - 1
-        }))
+    startTime() {
+        this.setState({
+            seconds: this.state.seconds + 1
+        });
+    }
+
+    componentWillUnmount() {
     }
     
     showHint() {
+        console.log('showhint');
         // this.setState(prevState => ({
         //     count: prevState.count + 1
         // }));
     }
-    render(){
-        if(this.state.timer> 0){
-            setTimeout(()=>{
-                this.beginTimer();
-            }, 1000)
+    seeAnswer(correct) {
+        if(correct){
+            alert('correct')
         }
+        alert('not correct')
+    }
+    render(){
         const testQuestion = {
             "questionId": 1,
             "description": "What player holds the career record for most stolen bases?",
@@ -59,19 +74,33 @@ class Card extends React.Component {
               }
             ]
         };
+        let answerss = testQuestion.answers
+        console.log(answerss)
+        let answersList = answerss.map((answers, index) => {
+            return(
+            <div className='col text-center' key={index}>
+                <button onClick={ () => this.seeAnswer(answers.isCorrect) }>
+                    {answers.value}
+                </button>
+            </div>
+            )
+        }) 
         return (
             <div>
-                <p className='lead'>{this.state.timer}</p>
+                <p className='lead'>{this.state.minutes}m {this.state.seconds}s</p>
                 <div className='row justify-content-center'>
                     <div className='col-6'>
                         <div className="card" onClick={ () => this.showHint() } >
                         {/* <img src={testQuestion.topic.imageUrl} className="card-img-top" alt="..." /> */}
-                            <div className="card-body">
+                            <div className="card-body" id="bodytext">
                                 <h5 className="card-title">{testQuestion.topic.title}</h5>
                                 <p className="card-text">{testQuestion.description}</p>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className='row mt-3'>
+                    {answersList}
                 </div>
             </div>
         )
