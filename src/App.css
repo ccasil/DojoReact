@@ -1,3 +1,33 @@
 .logged-in {
     color: green;
 }
+
+.square {
+    background-color: #eeeeee;
+    border-radius: 4px;
+    padding-bottom: 100%;
+ }
+ 
+.gray {
+    background-color: #eeeeee !important;
+}
+
+.green {
+    background-color: #93c47d !important;
+}
+
+.red {
+    background-color: #e06666 !important;
+}
+
+.yellow {
+    background-color: #ffe599 !important;
+}
+
+.correct {
+    background-color: #9fc5f8 !important;
+}
+
+.wrong {
+    background-color: #fff !important;
+}
