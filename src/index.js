@@ -7,14 +7,15 @@ import App from './App';
 import Counter from './Counter';
 import List from './List';
 import Card from './Card';
+import InfoCard from './InfoCard';
 
 ReactDOM.render(
   <React.StrictMode>
     <div className='container mt-3'>
-    {/* <App />
-    <Counter name="none" />
+    <App />
+    {/* <Counter name="none" />
     <List loggedIn="goose" /> */}
-    <Card />
+    {/* <InfoCard title="title ex" description="ex desc" imgPath="./src/" hint="this is the hint"/> */}
     </div>
   </React.StrictMode>,
   document.getElementById('root')

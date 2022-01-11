@@ -17,7 +17,7 @@ class Counter extends React.Component {
         return (
             <div className='container'>
                 <h1>{this.state.name} {this.props.name} {this.state.count}</h1>
-                <button
+                <button style={ this.state.count >= 15 ? { backgroundColor:'red'} : {backgroundColor : 'blue'} }
                     onClick={ () => this.updateCount() } >
                     Count
                 </button>
