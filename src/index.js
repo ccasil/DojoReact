@@ -8,11 +8,13 @@ import Counter from './Counter';
 import List from './List';
 import Card from './Card';
 import InfoCard from './InfoCard';
+import Time from './Time';
 
 ReactDOM.render(
   <React.StrictMode>
     <div className='container mt-3'>
-    <App />
+    {/* <App /> */}
+    <Time />
     {/* <Counter name="none" />
     <List loggedIn="goose" /> */}
     {/* <InfoCard title="title ex" description="ex desc" imgPath="./src/" hint="this is the hint"/> */}
