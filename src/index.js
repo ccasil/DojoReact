@@ -9,12 +9,14 @@ import List from './List';
 import Card from './Card';
 import Time from './Time';
 import Memory from './Memory';
+import WorkLogger from './WorkLogger';
 
 ReactDOM.render(
   <React.StrictMode>
     <div className='container mt-3'>
     {/* <App /> */}
-    <Memory />
+    {/* <Memory /> */}
+    <WorkLogger />
     {/* <Time /> */}
     {/* <Counter name="none" />
     <List loggedIn="goose" /> */}
