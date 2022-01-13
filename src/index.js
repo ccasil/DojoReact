@@ -10,13 +10,15 @@ import Card from './Card';
 import Time from './Time';
 import Memory from './Memory';
 import WorkLogger from './WorkLogger';
+import MovieData from './MovieData';
 
 ReactDOM.render(
   <React.StrictMode>
     <div className='container mt-3'>
     {/* <App /> */}
     {/* <Memory /> */}
-    <WorkLogger />
+    {/* <WorkLogger /> */}
+    <MovieData />
     {/* <Time /> */}
     {/* <Counter name="none" />
     <List loggedIn="goose" /> */}
